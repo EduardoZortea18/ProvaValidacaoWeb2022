@@ -1,0 +1,25 @@
+<div class="form-align">
+  <h1>Login</h1>
+  <div class="card">
+    <div class="card-body">
+      <div class="form-items-layout">
+        <div class="input-group">
+          <label class="bold-text">
+            Nome
+            <label class="required"></label>
+          </label>
+          <input type="text" [(ngModel)]="nome" placeholder="Nome"/>
+        </div>
+
+        <div class="input-group">
+          <label class="bold-text">
+            Senha
+            <label class="required"></label>
+          </label>
+          <input type="text" [(ngModel)]="senha" placeholder="Senha"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" (click)="login()">Entrar</button>
+</div>

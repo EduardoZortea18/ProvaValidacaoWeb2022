@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="form-align">
+  <h1>Cadastrar Aluno</h1>
+  <div class="card">
+    <div class="card-body">
+      <div class="form-items-layout">
+        <div class="input-group">
+          <label class="bold-text">
+            Nome
+            <label class="required"></label>
+          </label>
+          <input type="text" [(ngModel)]="nome" placeholder="nome"/>
+        </div>
+
+        <div class="input-group">
+          <label class="bold-text">
+            Telefone
+            <label class="required"></label>
+          </label>
+          <input type="text" [(ngModel)]="telefone" placeholder="telefone"/>
+        </div>
+
+        <div class="input-group">
+          <label class="bold-text">
+            Idade
+            <label class="required"></label>
+          </label>
+          <input type="number" min=0 [(ngModel)]="idade" placeholder="idade"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" (click)="save()">Registrar</button>
+</div>
