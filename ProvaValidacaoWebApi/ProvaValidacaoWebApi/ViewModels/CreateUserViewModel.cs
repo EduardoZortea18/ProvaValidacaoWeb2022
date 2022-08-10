@@ -7,6 +7,7 @@ namespace ProvaValidacaoWebApi.ViewModels
   public class CreateUserViewModel : Notifiable<Notification>
   {
     public string Nome { get; set; }
+
     public string Senha { get; set; }
 
     public User FromModel()

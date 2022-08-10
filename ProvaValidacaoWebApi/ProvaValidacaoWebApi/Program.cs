@@ -58,14 +58,14 @@ app.UseHttpsRedirection();
 
 app.UseCors(MyAllowSpecificOrigins);
 
-app.MapGet("/students", (DataContext context) =>
+app.MapGet("/ProgramacaoWeb2021/aluno", (DataContext context) =>
 {
   var students = context.Students.Select(student => StudentResponse.FromStudent(student)).ToList();
 
   return Results.Ok(students);
 }).Produces<List<Student>>();
 
-app.MapPost("/students",
+app.MapPost("/ProgramacaoWeb2021/aluno",
   (CreateStudentViewModel viewModel, DataContext context) =>
 {
   var student = viewModel.FromModel();
@@ -79,7 +79,7 @@ app.MapPost("/students",
   return Results.Created("", student);
 }).Produces<Student>().ProducesProblem(400).RequireAuthorization();
 
-app.MapPost("/login", (CreateUserViewModel userLogin, DataContext context) =>
+app.MapPost("/ProgramacaoWeb2021/login", (CreateUserViewModel userLogin, DataContext context) =>
 {
   var user = new UserService(context).CreateUser(userLogin);
 

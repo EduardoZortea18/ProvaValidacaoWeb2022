@@ -10,8 +10,8 @@ using ProvaValidacaoWebApi.Data;
 namespace ProvaValidacaoWebApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220809172904_InitialCreation")]
-    partial class InitialCreation
+    [Migration("20220810013926_InitialDatabase")]
+    partial class InitialDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,9 +22,6 @@ namespace ProvaValidacaoWebApi.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Idade")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")

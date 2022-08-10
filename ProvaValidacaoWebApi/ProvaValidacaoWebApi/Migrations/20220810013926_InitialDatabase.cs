@@ -4,7 +4,7 @@
 
 namespace ProvaValidacaoWebApi.Migrations
 {
-    public partial class InitialCreation : Migration
+    public partial class InitialDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,8 +15,7 @@ namespace ProvaValidacaoWebApi.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Telefone = table.Column<string>(type: "TEXT", nullable: true),
-                    Idade = table.Column<int>(type: "INTEGER", nullable: false)
+                    Telefone = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
