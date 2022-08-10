@@ -8,7 +8,7 @@ import { HeadersOptions } from '../models/header-options.interface';
   providedIn: 'root'
 })
 export class ApiService {
-  private readonly baseUrl = 'https://localhost:7191';
+  private readonly baseUrl = 'https://localhost:8080';
   readonly DEFAULT_HEADERS_OPTIONS: HeadersOptions = {
 		useAuthorizationHeader: true,
 		customHeaders: new HttpHeaders(),

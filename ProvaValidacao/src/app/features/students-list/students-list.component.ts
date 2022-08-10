@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/services/apiService.service';
 })
 export class StudentsListComponent implements OnInit {
 
-  students$ = this.apiService.get<Student[]>('/students');
+  students$ = this.apiService.get<Student[]>('/ProgramacaoWeb2021/aluno');
 
   constructor(private readonly apiService : ApiService) { }
 

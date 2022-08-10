@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     const userToLogin: UserLogin = { nome: this.nome, senha: this.senha };
 
-    this.apiService.postLogin<User, UserLogin>('/login', userToLogin).subscribe(
+    this.apiService.postLogin<User, UserLogin>('/ProgramacaoWeb2021/login', userToLogin).subscribe(
       (user: User) => {
         this.router.navigate(["/home"]);
         this.storage.setItem('token_default', JSON.stringify(user))

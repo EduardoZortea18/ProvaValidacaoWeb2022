@@ -16,7 +16,6 @@ export class StudentsFormComponent implements OnInit {
 
   nome: string = "";
   telefone: string = "";
-  idade: number = 0;
 
   constructor(
     private readonly router: Router,
@@ -33,8 +32,7 @@ export class StudentsFormComponent implements OnInit {
   save(): void {
     const student: StudentRegister = {
       nome: this.nome,
-      telefone: this.telefone,
-      idade: this.idade
+      telefone: this.telefone
     };
 
     let storedUserData = this.storage.getItem('token_default');
@@ -46,8 +44,11 @@ export class StudentsFormComponent implements OnInit {
 			validToken = JSON.parse(storedUserData) as {token: string, user: {id: number, nome: string, senha: string}};
 		}
 
-    this.apiService.post<Student, StudentRegister>('/students', student, storedUserData ? validToken.token : "").subscribe(
-      () => this.router.navigate(["/home"]),
+    this.apiService.post<Student, StudentRegister>('/ProgramacaoWeb2021/aluno', student, storedUserData ? validToken.token : "").subscribe(
+      () => {
+        this.toastrService.success('', 'Usuário registrado');
+        this.router.navigate(["/home"]);
+      },
       (response: HttpErrorResponse) => {
         if (response.status === 401){
           this.toastrService.error('', 'Usuário não autorizado');
